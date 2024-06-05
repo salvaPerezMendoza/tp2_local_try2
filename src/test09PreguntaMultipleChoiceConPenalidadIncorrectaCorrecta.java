@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class test08PreguntaMultipleChoiceConPenalidadIncorrecta {
+public class test09PreguntaMultipleChoiceConPenalidadIncorrectaCorrecta {
 
     @Test
     public void testPreguntaMultipleChoiceConPenalidadIncorrecta() {
@@ -14,7 +14,7 @@ public class test08PreguntaMultipleChoiceConPenalidadIncorrecta {
         List<Jugador> jugadores = Arrays.asList(jugador1, jugador2);
 
         // Crear lista de respuestas incorrectas
-        List<String> respuestas = Arrays.asList("A,C", "B");
+        List<String> respuestas = Arrays.asList("A,C", "A,B");
 
         // Crear la pregunta de Múltiple Choice con penalidad
         PreguntaMultipleChoiceConPenalidad pregunta = new PreguntaMultipleChoiceConPenalidad(
@@ -28,6 +28,6 @@ public class test08PreguntaMultipleChoiceConPenalidadIncorrecta {
 
         // Assert
         assertEquals(-1, jugador1.getPuntaje());
-        assertEquals(-1, jugador2.getPuntaje());
+        assertEquals(1, jugador2.getPuntaje());
     }
 }

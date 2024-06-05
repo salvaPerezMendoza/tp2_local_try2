@@ -1,8 +1,8 @@
 import java.util.List;
 
 public class PreguntaVerdaderoFalsoConPenalidad extends Pregunta {
-    public PreguntaVerdaderoFalsoConPenalidad(String texto, List<String> opciones, List<String> opcionesCorrectas) {
-        super(texto, opciones, opcionesCorrectas);
+    public PreguntaVerdaderoFalsoConPenalidad(String texto, String opcionCorrecta) {
+        super(texto, List.of("Verdadero", "Falso"), List.of(opcionCorrecta));
     }
 
     @Override

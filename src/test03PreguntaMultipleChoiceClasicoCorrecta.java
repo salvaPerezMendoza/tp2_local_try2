@@ -7,12 +7,13 @@ public class test03PreguntaMultipleChoiceClasicoCorrecta {
 
     @Test
     public void testPreguntaMultipleChoiceClasicoCorrecta() {
+        //Arrange
         // Crear jugadores
         Jugador jugador1 = new Jugador("Alice");
         Jugador jugador2 = new Jugador("Bob");
         List<Jugador> jugadores = Arrays.asList(jugador1, jugador2);
 
-        // Crear lista de respuestas correctas
+        // Crear lista de respuestas correctas, lo que respondio Alice y lo que respondio Bob
         List<String> respuestas = Arrays.asList("A,B", "A,B");
 
         // Crear la pregunta de Múltiple Choice clásico
@@ -22,10 +23,10 @@ public class test03PreguntaMultipleChoiceClasicoCorrecta {
                 Arrays.asList("A", "B")
         );
 
-        // Evaluar las respuestas
+        // Act
         pregunta.evaluar(respuestas, jugadores);
 
-        // Verificar que los puntos se asignaron correctamente
+        // Assert
         assertEquals(1, jugador1.getPuntaje());
         assertEquals(1, jugador2.getPuntaje());
     }

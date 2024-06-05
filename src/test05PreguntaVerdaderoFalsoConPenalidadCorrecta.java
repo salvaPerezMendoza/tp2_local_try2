@@ -7,6 +7,7 @@ public class test05PreguntaVerdaderoFalsoConPenalidadCorrecta {
 
     @Test
     public void testPreguntaVerdaderoFalsoConPenalidadCorrecta() {
+        // Arrange
         // Crear jugadores
         Jugador jugador1 = new Jugador("Alice");
         Jugador jugador2 = new Jugador("Bob");
@@ -18,14 +19,13 @@ public class test05PreguntaVerdaderoFalsoConPenalidadCorrecta {
         // Crear la pregunta de Verdadero/Falso con penalidad
         PreguntaVerdaderoFalsoConPenalidad pregunta = new PreguntaVerdaderoFalsoConPenalidad(
                 "¿El cielo es azul?",
-                Arrays.asList("Verdadero", "Falso"),
-                Arrays.asList("Verdadero")
+                "Verdadero"
         );
 
-        // Evaluar las respuestas
+        // Act
         pregunta.evaluar(respuestas, jugadores);
 
-        // Verificar que los puntos se asignaron correctamente
+        // Assert
         assertEquals(1, jugador1.getPuntaje());
         assertEquals(1, jugador2.getPuntaje());
     }

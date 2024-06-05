@@ -1,5 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,6 +8,7 @@ public class test02PreguntaVerdaderoFalsoClasicoIncorrecta {
 
     @Test
     public void testPreguntaVerdaderoFalsoClasicoIncorrecta() {
+        //Arrange
         // Crear jugadores
         Jugador jugador1 = new Jugador("Alice");
         Jugador jugador2 = new Jugador("Bob");
@@ -18,14 +20,13 @@ public class test02PreguntaVerdaderoFalsoClasicoIncorrecta {
         // Crear la pregunta de Verdadero/Falso clásico
         PreguntaVerdaderoFalsoClasico pregunta = new PreguntaVerdaderoFalsoClasico(
                 "¿El cielo es azul?",
-                Arrays.asList("Verdadero", "Falso"),
-                Arrays.asList("Verdadero")
+                "Verdadero"
         );
 
-        // Evaluar las respuestas
+        //Act
         pregunta.evaluar(respuestas, jugadores);
 
-        // Verificar que los puntos no se asignaron
+        //Assert
         assertEquals(0, jugador1.getPuntaje());
         assertEquals(0, jugador2.getPuntaje());
     }

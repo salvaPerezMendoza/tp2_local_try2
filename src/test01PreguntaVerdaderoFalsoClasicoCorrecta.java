@@ -8,6 +8,7 @@ public class test01PreguntaVerdaderoFalsoClasicoCorrecta {
 
     @Test
     public void testPreguntaVerdaderoFalsoClasicoCorrecta() {
+        // Arrange
         // Crear jugadores
         Jugador jugador1 = new Jugador("Alice");
         Jugador jugador2 = new Jugador("Bob");
@@ -19,14 +20,13 @@ public class test01PreguntaVerdaderoFalsoClasicoCorrecta {
         // Crear la pregunta de Verdadero/Falso clásico
         PreguntaVerdaderoFalsoClasico pregunta = new PreguntaVerdaderoFalsoClasico(
                 "¿El cielo es azul?",
-                Arrays.asList("Verdadero", "Falso"),
-                Arrays.asList("Verdadero")
+                "Verdadero"
         );
 
-        // Evaluar las respuestas
+        // Act
         pregunta.evaluar(respuestas, jugadores);
 
-        // Verificar que los puntos se asignaron correctamente
+        //Assert
         assertEquals(1, jugador1.getPuntaje());
         assertEquals(1, jugador2.getPuntaje());
     }

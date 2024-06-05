@@ -7,6 +7,7 @@ public class test07PreguntaMultipleChoiceConPenalidadCorrecta {
 
     @Test
     public void testPreguntaMultipleChoiceConPenalidadCorrecta() {
+        // Arrange
         // Crear jugadores
         Jugador jugador1 = new Jugador("Alice");
         Jugador jugador2 = new Jugador("Bob");
@@ -22,10 +23,10 @@ public class test07PreguntaMultipleChoiceConPenalidadCorrecta {
                 Arrays.asList("A", "B")
         );
 
-        // Evaluar las respuestas
+        // Act
         pregunta.evaluar(respuestas, jugadores);
 
-        // Verificar que los puntos se asignaron correctamente
+        // Assert
         assertEquals(1, jugador1.getPuntaje());
         assertEquals(1, jugador2.getPuntaje());
     }
